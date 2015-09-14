@@ -1,0 +1,1 @@
+node_modules\.bin\docpad.cmd run

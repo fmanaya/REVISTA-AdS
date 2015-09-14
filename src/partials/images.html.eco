@@ -1,0 +1,8 @@
+<% renderToc = (items) => %>
+<ol class="toc">
+    <% for item in items: %>
+        <li><img src="#<%= item.src %>" src="#<%= item.alt %>"   /></li>
+    <% end %>
+</ol>
+<% end %>
+<%= renderToc @tocItems %>

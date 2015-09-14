@@ -1,0 +1,117 @@
+---
+title: Saluda
+autor: Pilara Piedrafita Acín
+numrev: 999
+layout: "default"
+isPage: true
+numArticulo: 1
+---
+
+<%- @getUrl() %>
+
+## Modo APAISADO very-large
+<div class="apa-very-large-phi"><img src="<%= @getThumbnail("img/srbl999/s999a1i10.jpg", 'very-large-phi') %>" alt="" title="very-large-phi" copyright=""></div>
+
+<div class="apa-very-large-phi-w"><img src="<%= @getThumbnail("img/srbl999/s999a1i11.jpg", 'very-large-phi-w') %>" alt="" title="very-large-phi-w" copyright=""></div>
+
+<img src="<%= @getThumbnail("img/srbl999/s999a1i12.jpg", 'very-large-phi-p') %>" alt="" title="very-large-phi-p" copyright="">
+
+----
+## Modo Portrait very-large
+<img src="<%= @getThumbnail("img/srbl999/s999a1i20.jpg", 'very-large-phi') %>" alt="" title="very-large-phi" copyright="">
+
+<img src="<%= @getThumbnail("img/srbl999/s999a1i22.jpg", 'very-large-phi-p') %>" alt="" title="very-large-phi-p" copyright="">
+
+<img src="<%= @getThumbnail("img/srbl999/s999a1i21.jpg", 'very-large-phi-w') %>" alt="" title="very-large-phi-w" copyright="">
+
+----
+----
+
+## Modo APAISADO large
+<img src="<%= @getThumbnail("img/srbl999/s999a1i30.jpg", 'large-phi') %>" alt="" title="large-phi" copyright="">
+
+<img src="<%= @getThumbnail("img/srbl999/s999a1i31.jpg", 'large-phi-w') %>" alt="" title="large-phi-w" copyright="">
+
+<img src="<%= @getThumbnail("img/srbl999/s999a1i32.jpg", 'large-phi-p') %>" alt="" title="large-phi-p" copyright="">
+
+----
+## Modo Portrait large
+<img src="<%= @getThumbnail("img/srbl999/s999a1i40.jpg", 'large-phi') %>" alt="" title="large-phi" copyright="">
+
+<img src="<%= @getThumbnail("img/srbl999/s999a1i42.jpg", 'large-phi-p') %>" alt="" title="large-phi-p" copyright="">
+
+<img src="<%= @getThumbnail("img/srbl999/s999a1i41.jpg", 'large-phi-w') %>" alt="" title="large-phi-w" copyright="">
+
+----
+----
+
+## Modo APAISADO medium
+<img src="<%= @getThumbnail("img/srbl999/s999a1i50.jpg", 'medium-phi') %>" alt="" title="medium-phi" copyright="">
+
+<img src="<%= @getThumbnail("img/srbl999/s999a1i51.jpg", 'medium-phi-w') %>" alt="" title="medium-phi-w" copyright="">
+
+<img src="<%= @getThumbnail("img/srbl999/s999a1i52.jpg", 'medium-phi-p') %>" alt="" title="medium-phi-p" copyright="">
+
+----
+## Modo Portrait medium
+<img src="<%= @getThumbnail("img/srbl999/s999a1i60.jpg", 'medium-phi') %>" alt="" title="medium-phi" copyright="">
+
+<img src="<%= @getThumbnail("img/srbl999/s999a1i62.jpg", 'medium-phi-p') %>" alt="" title="medium-phi-p" copyright="">
+
+<img src="<%= @getThumbnail("img/srbl999/s999a1i61.jpg", 'medium-phi-w') %>" alt="" title="medium-phi-w" copyright="">
+
+----
+----
+
+## Modo APAISADO small
+<img src="<%= @getThumbnail("img/srbl999/s999a1i70.jpg", 'small-phi') %>" alt="" title="small-phi" copyright="">
+
+<img src="<%= @getThumbnail("img/srbl999/s999a1i71.jpg", 'small-phi-w') %>" alt="" title="small-phi-w" copyright="">
+
+<img src="<%= @getThumbnail("img/srbl999/s999a1i72.jpg", 'small-phi-p') %>" alt="" title="small-phi-p" copyright="">
+
+----
+## Modo Portrait small
+<img src="<%= @getThumbnail("img/srbl999/s999a1i80.jpg", 'small-phi') %>" alt="" title="small-phi" copyright="">
+
+<img src="<%= @getThumbnail("img/srbl999/s999a1i82.jpg", 'small-phi-p') %>" alt="" title="small-phi-p" copyright="">
+
+<img src="<%= @getThumbnail("img/srbl999/s999a1i81.jpg", 'small-phi-w') %>" alt="" title="small-phi-w" copyright="">
+
+
+Colons can be used to align columns.
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
+The outer pipes (|) are optional, and you don't need to make the raw Markdown line up prettily. You can also use inline Markdown.
+
+Markdown | Less | Pretty
+--- | --- | ---
+*Still* | `renders` | **nicely**
+1 | 2 | 3
+
+
+
+preset | dimensiones  | |Salida Disp imagen W | Salida Disp imagen P | coment
+-----|---------|--|-------|---------
+very-large-phi|w: 972 h: 972|==>| **972x721** | 721x972|
+very-large-phi-w| w: 972 h: 601|==>| 811x601 | **601x811**|
+very-large-phi-p| w: 601 h: 972|==>| **601x446** | 446x601|
+-||||
+~~large-phi~~|w: 601 h: 601|==>| ~~601x446~~ | ~~446x601~~| Resultado igual que el anterior
+large-phi-w| w: 601 h: 371|==>| 500x371 | **371x500**|
+large-phi-p| w: 371 h: 601|==>| **371x275** | 275x371|
+-||||
+~~medium-phi~~|w: 371 h: 371|==>| ~~371x275~~ | ~~275x371~~|Resultado igual que el anterior
+medium-phi-w| w: 371 h: 229|==>| 309x229 | **229x309**|
+medium-phi-p| w: 229 h: 371|==>| **229x170** | 170x229|
+-||||
+~~small-phi~~|w: 229 h: 229|==>| ~~229x170~~ | ~~170x229~~|Resultado igual que el anterior
+small-phi-w| w: 229 h: 71|==>| 96x71 | **71x96**|
+small-phi-p| w: 71 h: 229|==>| **71x53** | 53x71|
+
+

@@ -1,0 +1,66 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title><%= @document.title %> | <%= @site.title %></title>
+		<%- @getBlock("meta").toHTML() %>
+		<%- @getBlock("styles").add(["/styles/style.css"]).toHTML() %>
+		<%- @getBlock("scripts").add(["/vendor/jquery.js", "/vendor/jquery.collagePlus.min.js", "/scripts/script.js"]).toHTML() %>
+	</head>
+	<body>	
+
+		<h1 class="nrorev">170</h1>
+		<ul>
+			<% for page in @getSorted(170).toJSON(): %>
+				<li class="<%= if page.id is @document.id then 'active' else 'inactive' %>">
+					<a href="<%= page.url %>">
+						<%= page.title %>
+					</a>
+				</li>
+			<% end %>
+		</ul>	
+		<h1 class="nrorev">171</h1>
+		<ul>
+			<% for page in @getSorted(171).toJSON(): %>
+				<li class="<%= if page.id is @document.id then 'active' else 'inactive' %>">
+					<a href="<%= page.url %>">
+						<%= page.title %>
+					</a>
+				</li>
+			<% end %>
+		</ul>
+		<h1 class="nrorev">172</h1>
+		<ul>
+			<% for page in @getSorted(172).toJSON(): %>
+				<li class="<%= if page.id is @document.id then 'active' else 'inactive' %>">
+					<a href="<%= page.url %>">
+						<%= page.title %>
+					</a>
+				</li>
+			<% end %>
+		</ul>
+		<h1 class="nrorev">999</h1>
+		<ul>
+			<% for page in @getSorted(999).toJSON(): %>
+				<li class="<%= if page.id is @document.id then 'active' else 'inactive' %>">
+					<a href="<%= page.url %>">
+						<%= page.title %> PRUEBAS
+					</a>
+				</li>
+			<% end %>
+		</ul>
+		
+		<hr/>
+		<h1><%= @document.title %></h1>
+		<p><%= @document.subtitle %></p>
+		<p><strong><%= @document.autor %></strong></p>
+		
+		<div id="one">
+			<%- @content %>
+		</div>
+		<div id="two">
+		</div>
+		
+		
+		<%- @getBlock("scripts").toHTML() %>
+	</body>
+</html>
