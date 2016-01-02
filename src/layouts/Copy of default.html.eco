@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title><%= @document.title %> | <%= @site.title %></title>
+		<%- @getBlock("meta").toHTML() %>
+		<%- @getBlock("styles").add(["/styles/style.css"]).toHTML() %>
+		<%- @getBlock("scripts").add(["/vendor/jquery.js", "/vendor/jquery.collagePlus.min.js", "/scripts/script.js"]).toHTML() %>
+	</head>
+	<body>
+		<h1>167</h1>
+		<ul>
+			<% for page in @getSorted(167).toJSON(): %>
+				<li class="<%= if page.id is @document.id then 'active' else 'inactive' %>">
+					<a href="<%= page.url %>">
+						<%= page.title %>
+					</a>
+				</li>
+			<% end %>
+		</ul>		
+
+		<h1>168</h1>
+		<ul>
+			<% for page in @getSorted(168).toJSON(): %>
+				<li class="<%= if page.id is @document.id then 'active' else 'inactive' %>">
+					<a href="<%= page.url %>">
+						<%= page.title %>
+					</a>
+				</li>
+			<% end %>
+		</ul>		
+		<hr/>
+		<h1><%= @document.title %></h1>
+		<p><strong><%= @document.autor %></strong></p>
+		
+		<%- @content %>
+		
+		<!-- div class="imgs">
+		    <h3>Lista de imagenes</h3>
+		    <%- @partial('images.html.eco', {tocItems: @document.tableOfImages?}) %>
+		</div -->		
+		
+		<%- @getBlock("scripts").toHTML() %>
+	</body>
+</html>

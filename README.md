@@ -26,5 +26,9 @@ Con esta herramienta se postprocesa cada fichero html generado para tocar los at
 - Mejorar el tratamiento de imagenes con algun plugin jQuery. [CollagePlus](https://ed-lea.github.io/jquery-collagePlus/), [Chocolat](http://chocolat.insipi.de/),...
 - Publicacion automatica en Drupal
 
+## Referencias:
+- https://github.com/ervwalter/ewalnet-docpad, incluye plugin
+- http://www.delarre.net/posts/creating-a-docpad-plugin/
+
 ## License
 Ver [Docpad](https://github.com/docpad/docpad#license)

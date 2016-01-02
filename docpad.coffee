@@ -12,11 +12,12 @@ docpadConfig = {
 	# You can find a full listing of events on the DocPad Wiki
 
 	events:
+	    #conextualizeBefore
 		renderDocument: (opts) ->
 			# Prepare
 			{inExtension,outExtension,templateData,file,content} = opts
 			docpad = @docpad
-			docpad.log 'renderDocument ' + opts.templateData.document.basename + ': ' + opts.templateData.document.title 
+			#docpad.log 'renderDocument ' + opts.templateData.document.basename + ': ' + opts.templateData.document.title 
 			#JSON.stringify(opts) 
 			#TODO: revisar pq quita un espacio delante de la cadena a sustituir
 			srblTranslator =
@@ -48,11 +49,12 @@ docpadConfig = {
 #				texto = texto.replace /#{key}/g, #{value}   #   "My favorite muppet is #{muppet}!"
 				re = new RegExp('[^>]'+key, "g");
 				texto = texto.replace(re, ' '+value);
-				docpad.log key
+				#docpad.log key
 			opts.content = texto
 
 		
 	collections:
+		# obsoletos
 		s167: ->
 			micol = @getCollection("html").findAllLive({isPage:true, numrev:167} )
 			micol.comparator = (doc) ->  parseInt(doc.get("numArticulo"), 10)                           
@@ -86,7 +88,10 @@ docpadConfig = {
 	 
 	templateData:		
 		getSorted: (rev) ->
-			micol = @getCollection("html").findAllLive({isPage:true, numrev: rev} )
+			micol = @getCollection("html").findAllLive({isPage:true, numrev: rev} ).on('add', (document) ->
+				document.setMetaDefaults(standalone: true)   # referencesOthers: false
+			)
+
 			micol.comparator = (a1, a2) ->  parseInt(a1.get("numArticulo"), 10) - parseInt(a2.get("numArticulo"), 10)
 			micol.sort()
 			micol
@@ -211,7 +216,14 @@ docpadConfig = {
 			stylusOptions:
 				compress: true
 				'include css': true
-				
+		associatedfiles:
+			# The paths for the associated files.
+			# associatedFilesPath: 'associated-files'
+
+			# Whether to use relative base paths for the document. This would
+			# use associated-files/subfolder/myarticle/image.jpg instead of
+			# associated-files/myarticle/image.jpg.
+			useRelativeBase: true
 }
 
 # Export the DocPad Configuration

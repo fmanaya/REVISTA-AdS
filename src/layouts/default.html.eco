@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<link href="/favicon.ico" rel="shortcut icon">
 		<title><%= @document.title %> | <%= @site.title %></title>
 		<%- @getBlock("meta").toHTML() %>
 		<%- @getBlock("styles").add(["/styles/style.css"]).toHTML() %>
@@ -50,12 +51,20 @@
 		</ul>
 		
 		<hr/>
-		<h1><%= @document.title %></h1>
-		<p><%= @document.subtitle %></p>
-		<p><strong><%= @document.autor %></strong></p>
+		
 		
 		<div id="one">
-			<%- @content %>
+			<article>
+				<header>
+			    	<h1><%= @document.title %></h1>
+		            <p><%= @document.subtitle %></p>
+					<p><strong><%= @document.autor %></strong></p>
+			    </header>
+			    <section>
+					<%- @content %>
+			    </section>
+			</article>
+			
 		</div>
 		<div id="two">
 		</div>
@@ -64,3 +73,4 @@
 		<%- @getBlock("scripts").toHTML() %>
 	</body>
 </html>
+

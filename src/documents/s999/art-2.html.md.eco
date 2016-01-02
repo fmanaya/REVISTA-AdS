@@ -1,0 +1,26 @@
+---
+title: test associatedFiles partials
+autor: otro autor
+numrev: 999
+layout: "default"
+isPage: true
+numArticulo: 2
+associatedFilesRelative: false
+associatedFilesPath: './includes'
+
+---
+
+<%- @getUrl() %>
+
+
+----
+## 1
+<% for file in @getDocument().getAssociatedFiles().toJSON(): %>
+<%- @partial('noticia', false, @, {doc: file}) %>
+<% end %>
+
+----
+## 2
+<% for file in @getDocument().getAssociatedFiles().toJSON(): %>
+<%- @partial('noticia2', false, @, {doc: file, contenido: file.content}) %>
+<% end %>

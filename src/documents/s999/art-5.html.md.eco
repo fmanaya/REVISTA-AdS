@@ -1,0 +1,25 @@
+---
+title: test associatedFiles
+autor: otro autor
+numrev: 999
+layout: "default"
+isPage: true
+numArticulo: 5
+associatedFilesRelative: false
+associatedFilesPath: './includes'
+---
+
+<%- @getUrl() %>
+
+<% for file in @getDocument().getAssociatedFiles().toJSON(): %>
+<article class="news">
+    <header>
+<h2><%= file.title %></h2>
+    </header>
+    <section>
+<% if file.img: %><img src="<%= @getThumbnail(file.img, 'medium-phi') %>" alt="" title="" copyright=""/><% end %>
+<%- file.contentRenderedWithoutLayouts %>
+    </section>
+</article>
+<% end %>
+
