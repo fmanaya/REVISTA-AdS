@@ -1,9 +1,44 @@
 # DocPad Configuration File
 # http://docpad.org/docs/config
 
+#ver https://github.com/maximilianschmitt/docpad-plugin-shortcodeparser
+#class Shortcode
+#	constructor: (@name, @replacer) ->
+
+#srblShortCodes = []
+#[vimeo id="21657846" width="100%" height="500" title="0" byline="0"]
+#srblShortCodes.push new Shortcode 'vimeo', (attributes, content) ->
+#	attributes.id ?= '21657846'
+#	attributes.title ?= true
+#	attributes.byline ?= true
+#	attributes.portrait ?= true
+#	attributes.color ?= '#FFFFFF'
+#
+#	"""
+#	<iframe src="http://player.vimeo.com/video/#{attributes.id}?title=#{attributes.title}&amp;byline=#{attributes.byline}&amp;portrait=#{attributes.portrait}&amp;color=#{attributes.color}" width="#{attributes.width}" height="#{attributes.height}" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+#	"""
+
+#[sc t="XXII"]
+#srblShortCodes.push new Shortcode 'sc', (attrs, content) ->
+#	attrs.t ?= ''
+#
+#	"""
+#	<span class="smallcaps">#{attrs.t}</span>
+#	"""
+
+
+srblSCodes = [ {
+  tag: 'sc'
+  cb: (buf, opts, templateData) ->
+    '<span class="smallcaps">' + buf + '</span>'
+} ]
+
+
 # Define the DocPad Configuration
 docpadConfig = {
 
+	ignoreCustomPatterns: /.kk/
+	ignoreCustomPatternsKK: /s999/
 
 	# =================================
 	# DocPad Events
@@ -12,45 +47,79 @@ docpadConfig = {
 	# You can find a full listing of events on the DocPad Wiki
 
 	events:
-	    #conextualizeBefore
-		renderDocument: (opts) ->
+		#conextualizeBefore
+		renderX: (opts) ->
 			# Prepare
 			{inExtension,outExtension,templateData,file,content} = opts
 			docpad = @docpad
-			#docpad.log 'renderDocument ' + opts.templateData.document.basename + ': ' + opts.templateData.document.title 
-			#JSON.stringify(opts) 
-			#TODO: revisar pq quita un espacio delante de la cadena a sustituir
-			srblTranslator =
-				'Museo de Dibujo Julio Gavín-Castillo de Larrés'	: '<a href="/museodibujo">Museo de Dibujo Julio Gavín-Castillo de Larrés</a>',
-				'Museo de Dibujo “Julio Gavín-Castillo de Larrés”'	: '<a href="/museodibujo">Museo de Dibujo Julio Gavín-Castillo de Larrés</a>',
-				'Museo de Dibujo "Julio Gavín-Castillo de Larrés"'	: '<a href="/museodibujo">Museo de Dibujo Julio Gavín-Castillo de Larrés</a>',
-				'Museo “Ángel Orensanz y Artes de Serrablo”'		: '<a href="/museoetnologico">Museo Ángel Orensanz y Artes de Serrablo</a>',
-				'Museo Ángel Orensanz y Artes de Serrablo'			: '<a href="/museoetnologico">Museo Ángel Orensanz y Artes de Serrablo</a>',
-				'Comarca Alto Gállego'								: '<a href="http://www.comarcaaltogallego.es">Comarca Alto Gállego</a>',
-				'Comarca de La Jacetania'							: '<a href="http://www.jacetania.es">Comarca de La Jacetania</a>',
-				'Gobierno de Aragón'								: '<a href="http://www.aragon.es">Gobierno de Aragón</a>',
-				'Ayuntamiento de Sabiñánigo'						: '<a href="http://www.sabiñanigo.es">Ayuntamiento de Sabiñánigo</a>',
-				'Instituto de Estudios Altoaragoneses'				: '<a href="http://www.iea.es">Instituto de Estudios Altoaragoneses</a>',
-				'Obra Social de Ibercaja'							: '<a href="http://obrasocial.ibercaja.es">Obra Social de Ibercaja</a>',
-				'Asociación Fotográfica de Sabiñánigo' 				: '<a href="http://www.afsabi.com">Asociación Fotográfica de Sabiñánigo</a>',
-				'Asociación O Zoque' 								: '<a href="http://www.ozoque.com">Asociación O Zoque</a>',
-				'Asociación Sancho Ramírez' 						: '<a href="http://www.asociacionsanchoramirez.com">Asociación Sancho Ramírez</a>',
-				'Museo de Miniaturas militares de la Ciudadela' 	: '<a href="http://www.museominiaturasjaca.es">Museo de Miniaturas militares de la Ciudadela</a>',
-				'Museo de Miniaturas Militares de la Ciudadela' 	: '<a href="http://www.museominiaturasjaca.es">Museo de Miniaturas militares de la Ciudadela</a>',
-				'Museo Diocesano de Jaca' 							: '<a href="http://www.diocesisdejaca.org/index.php/museo-diocesano-de-jaca">Museo Diocesano de Jaca</a>',
-				'Museo Diocesano de Arte Románico de Jaca' 			: '<a href="http://www.diocesisdejaca.org/index.php/museo-diocesano-de-jaca">Museo Diocesano de Arte Románico de Jaca</a>',
-				'Museo Diocesano' 							        : '<a href="http://www.diocesisdejaca.org/index.php/museo-diocesano-de-jaca">Museo Diocesano</a>',
+			# Render if applicable
+			if file.meta.numrev == 999 
+				docpad.log 'renderxxxxxxxxxxxx ' +  opts.templateData.document.basename + " -- " +JSON.stringify(file.meta)
+			opts.content = content
+
+#			if inExtension in ['eco'] and outExtension in ['md']
+#				#docpad.log 'render ======================='
+#				#docpad.log 'render ' +  JSON.stringify(opts.templateData.document.basename)
+#				#docpad.log 'render ======================='
+#				opts.content = content          #.toUpperCase() # your conversion to be saved
+
+		render: (opts) ->
+			# Prepare
+			{inExtension,outExtension,templateData,file,content} = opts
+			docpad = @docpad
+
+			# Render if applicable
+			if inExtension in ['md'] and outExtension in ['html']
+				#opts.content = content.toUpperCase() # your conversion to be saved
 
 
-				'Hardcore History'									: 'http://www.dancarlin.com/disp.php/hh'
+				srblTranslator =
+					'Museo de Dibujo Julio Gavín-Castillo de Larrés'	: '<a href="/museodibujo">Museo de Dibujo Julio Gavín-Castillo de Larrés</a>',
+					'Museo de Dibujo “Julio Gavín-Castillo de Larrés”'	: '<a href="/museodibujo">Museo de Dibujo Julio Gavín-Castillo de Larrés</a>',
+					'Museo de Dibujo "Julio Gavín-Castillo de Larrés"'	: '<a href="/museodibujo">Museo de Dibujo Julio Gavín-Castillo de Larrés</a>',
+					'Museo “Ángel Orensanz y Artes de Serrablo”'		: '<a href="/museoetnologico">Museo Ángel Orensanz y Artes de Serrablo</a>',
+					'Museo Ángel Orensanz y Artes de Serrablo'			: '<a href="/museoetnologico">Museo Ángel Orensanz y Artes de Serrablo</a>',
+					'Comarca Alto Gállego'								: '<a href="http://www.comarcaaltogallego.es">Comarca Alto Gállego</a>',
+					'Comarca de La Jacetania'							: '<a href="http://www.jacetania.es">Comarca de La Jacetania</a>',
+					'Gobierno de Aragón'								: '<a href="http://www.aragon.es">Gobierno de Aragón</a>',
+					'Ayuntamiento de Sabiñánigo'						: '<a href="http://www.sabiñanigo.es">Ayuntamiento de Sabiñánigo</a>',
+					'Instituto de Estudios Altoaragoneses'				: '<a href="http://www.iea.es">Instituto de Estudios Altoaragoneses</a>',
+					'Obra Social de Ibercaja'							: '<a href="http://obrasocial.ibercaja.es">Obra Social de Ibercaja</a>',
+					'Asociación Fotográfica de Sabiñánigo' 				: '<a href="http://www.afsabi.com">Asociación Fotográfica de Sabiñánigo</a>',
+					'Asociación O Zoque' 								: '<a href="http://www.ozoque.com">Asociación O Zoque</a>',
+					'Asociación Sancho Ramírez' 						: '<a href="http://www.asociacionsanchoramirez.com">Asociación Sancho Ramírez</a>',
+					'Museo de Miniaturas militares de la Ciudadela' 	: '<a href="http://www.museominiaturasjaca.es">Museo de Miniaturas militares de la Ciudadela</a>',
+					'Museo de Miniaturas Militares de la Ciudadela' 	: '<a href="http://www.museominiaturasjaca.es">Museo de Miniaturas militares de la Ciudadela</a>',
+					'Museo Diocesano de Jaca' 							: '<a href="http://www.diocesisdejaca.org/index.php/museo-diocesano-de-jaca">Museo Diocesano de Jaca</a>',
+					'Museo Diocesano de Arte Románico de Jaca' 			: '<a href="http://www.diocesisdejaca.org/index.php/museo-diocesano-de-jaca">Museo Diocesano de Arte Románico de Jaca</a>',
+					'Museo Diocesano' 							        : '<a href="http://www.diocesisdejaca.org/index.php/museo-diocesano-de-jaca">Museo Diocesano</a>',
 
-			texto = content
-			for key, value of srblTranslator
-#				texto = texto.replace /#{key}/g, #{value}   #   "My favorite muppet is #{muppet}!"
-				re = new RegExp('[^>]'+key, "g");
-				texto = texto.replace(re, ' '+value);
-				#docpad.log key
-			opts.content = texto
+
+					'Hardcore History'									: 'http://www.dancarlin.com/disp.php/hh'
+
+				texto = content
+				for key, value of srblTranslator
+	#				texto = texto.replace /#{key}/g, #{value}   #   "My favorite muppet is #{muppet}!"
+					re = new RegExp('[^>]'+key, "g");  # no al principio de la linea
+					texto = texto.replace(re, ' '+value);
+					#docpad.log key
+				#opts.content = texto
+
+				# Otras cosas, abreviaturas, romanos small-caps ...	
+				#re = /\b(I|II|III|IV|V|VI|VII|VIII|IX|X|XI|XII|XIII|XIV|XV|XVI|XVII|XVIII|XIX|XX|XXI)\b/g;
+				#texto = texto.replace(re, "<span class=\"smallcaps\">$1</span>")
+				
+				
+
+				#re = new RegExp(' ([A-Z]+) ', 'g')
+				#texto = texto.replace(re, " <span class=\"smallcaps\">$1</span> ")
+
+				#re = /\(([A-Z]+)\)/g
+				#opts.content = texto.replace(re, "(<span class=\"smallcaps\">$1</span>)")
+
+				#opts.content = texto.replace(/([A-Z]{2,6})/g, "(<span class=\"smallcaps\">$1</span>)")			
+
+				opts.content = texto
 
 		
 	collections:
@@ -101,6 +170,15 @@ docpadConfig = {
 		styles: [+
 			"/styles/style.css"
 			]
+
+		currentNum: 173
+		setCurrentNum: (x)->
+			console.log(x)
+			currentNum = x
+		getCurrentNum: ->
+			currentNum
+
+		# buscar plugin que haga esto, seguro lo hay	https://github.com/dodo/node-slug
 		getUrl: -> 
 			weburl = @document.title.toLowerCase()
 			weburl = weburl.replace /(\sy\s)/g, " "
@@ -128,7 +206,12 @@ docpadConfig = {
 			weburl = weburl.replace /á/g, "a"
 			weburl = weburl.replace /ó/g, "o"
 			"<pre>/revista/167/" + weburl + "</pre>"
+
 	plugins:
+		adspre:
+			debug: false
+			codes: srblSCodes
+	
 		thumbnails:
 			extensions: ['jpg', 'JPG', 'jpeg', 'JPEG', 'png', 'PNG', 'gif', 'GIF']
 #			imageMagick: true		

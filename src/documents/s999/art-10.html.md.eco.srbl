@@ -1,0 +1,28 @@
+---
+title: Test plugins
+subtitle: test plugins srbl para incorporacion de imagenes como adjuntos y shortCodes
+autor: Amigos de Serrablo
+numrev: 999
+layout: "default"
+isPage: true
+numArticulo: 10
+img: 
+- {nombre:"s999a1i10.jpg", modo:"very-large-phi", titulo:"very-large-phi", cp:""}
+---
+
+<%- @getUrl() %>
+
+
+Esto es una *prueba* en @s999a1i10.jpg a ver que pasa. 
+
+
+## ShortCodes
+[vimeo id="21657846" width="100%" height="500" title="0" byline="0"]
+
+En el siglo XXII y [sc]XXII[/sc] tendremos mas cerebro y menos ... que en el siglo XX.
+
+La Asociación “Amigos de Serrablo” ha asistido a las interesantes jornadas que organizó en Huesca en noviembre el Instituto de Estudios Altoaragoneses ([sc]IEA[/sc]) sobre don Antonio Durán Gudiol, cuando se cumplen 21 años de su fallecimiento. 
+
+Durán Gudiol fue glosado como maestro e historiador, canónigo archivero de la Catedral y director hasta 1994 del Instituto de Estudios. 
+
+Y, para nosotros, ante todo, [sc]IEA[/sc] como una de las figuras clave en el surgimiento de “Amigos de Serrablo”. Enhorabuena al [sc]IEA[/sc] por esta iniciativa.

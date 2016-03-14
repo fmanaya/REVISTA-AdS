@@ -7,20 +7,11 @@
 		<%- @getBlock("styles").add(["/styles/style.css"]).toHTML() %>
 		<%- @getBlock("scripts").add(["/vendor/jquery.js", "/vendor/jquery.collagePlus.min.js", "/scripts/script.js"]).toHTML() %>
 	</head>
-	<body>	
-
-		<h1 class="nrorev">170</h1>
-		<ul>
-			<% for page in @getSorted(170).toJSON(): %>
-				<li class="<%= if page.id is @document.id then 'active' else 'inactive' %>">
-					<a href="<%= page.url %>">
-						<%= page.title %>
-					</a>
-				</li>
-			<% end %>
-		</ul>	
-		<h1 class="nrorev">171</h1>
-		<ul>
+	<body>
+		<!-- http://uniondesign.ca/simple-accordion-without-jquery-ui/ -->
+		<div id="accordion">
+		<h1 class="nrorev accordion-toggle">171</h1>
+		<ul class="accordion-content">
 			<% for page in @getSorted(171).toJSON(): %>
 				<li class="<%= if page.id is @document.id then 'active' else 'inactive' %>">
 					<a href="<%= page.url %>">
@@ -29,8 +20,8 @@
 				</li>
 			<% end %>
 		</ul>
-		<h1 class="nrorev">172</h1>
-		<ul>
+		<h1 class="nrorev accordion-toggle">172</h1>
+		<ul class="accordion-content">
 			<% for page in @getSorted(172).toJSON(): %>
 				<li class="<%= if page.id is @document.id then 'active' else 'inactive' %>">
 					<a href="<%= page.url %>">
@@ -39,8 +30,18 @@
 				</li>
 			<% end %>
 		</ul>
-		<h1 class="nrorev">999</h1>
-		<ul>
+		<h1 class="nrorev accordion-toggle">173</h1>
+		<ul class="accordion-content default">
+			<% for page in @getSorted(173).toJSON(): %>
+				<li class="<%= if page.id is @document.id then 'active' else 'inactive' %>">
+					<a href="<%= page.url %>">
+						<%= page.title %>
+					</a>
+				</li>
+			<% end %>
+		</ul>	
+		<h1 class="nrorev accordion-toggle">999</h1>
+		<ul class="accordion-content">
 			<% for page in @getSorted(999).toJSON(): %>
 				<li class="<%= if page.id is @document.id then 'active' else 'inactive' %>">
 					<a href="<%= page.url %>">
@@ -49,7 +50,7 @@
 				</li>
 			<% end %>
 		</ul>
-		
+		</div>
 		<hr/>
 		
 		

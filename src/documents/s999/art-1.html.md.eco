@@ -1,13 +1,17 @@
 ---
 title: Saluda
+subtitle: Resumen formatos de imagenes a usar con plugin thumbnails
 autor: Pilara Piedrafita Acín
 numrev: 999
 layout: "default"
 isPage: true
 numArticulo: 1
+imgkk: ['aa', 'bb']
+img: [{nombre:"s999a1i10.jpg", modo:"very-large-phi", titulo:"very-large-phi", cp:""}]
 ---
 
 <%- @getUrl() %>
+
 
 ## Modo APAISADO very-large
 <div class="apa-very-large-phi"><img src="<%= @getThumbnail("img/srbl999/s999a1i10.jpg", 'very-large-phi') %>" alt="" title="very-large-phi" copyright=""></div>

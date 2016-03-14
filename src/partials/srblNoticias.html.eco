@@ -1,0 +1,21 @@
+
+<% for file in @files.toJSON(): %>
+<article class="news">
+    <header>
+<h2><%= file.title %></h2>
+    </header>
+    <section>
+<% if file.imgs: %>
+    <% for img in file.imgs: %>
+        <%  modo = img.modo || 'w' %> 
+        <% thumbPreset = 'medium-phi-' + modo %>
+        <figure>
+            <img src="<%= @getThumbnail(img.path, {w:300, h:300}) %>" alt="" title="<%=img.titulo%>" copyright="<%=img.cp%>" class="imagen izqu"/>
+            <figcaption><%=img.titulo%> <%=img.cp%></figcaption>
+        </figure>
+    <% end %>
+<% end %>
+<%- file.contentRenderedWithoutLayouts %>
+    </section>
+</article>
+<% end %>

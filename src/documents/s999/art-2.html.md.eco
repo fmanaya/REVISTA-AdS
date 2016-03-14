@@ -1,5 +1,6 @@
 ---
 title: test associatedFiles partials
+subtitle: Uso de associatedFiles u partials
 autor: otro autor
 numrev: 999
 layout: "default"
@@ -12,6 +13,7 @@ associatedFilesPath: './includes'
 
 <%- @getUrl() %>
 
+Busca todos los ficheros en un path especifico. Uso de partials para rendering
 
 ----
 ## 1

@@ -21,8 +21,8 @@ Con esta herramienta se postprocesa cada fichero html generado para tocar los at
 ```
 
 ## TODOs:
-- Meter el caption de las imagenes.
-- Usar [Typeset](https://blot.im/typeset/)
+- Meter el caption de las imagenes. (DONE)
+- Usar [slug](https://github.com/dodo/node-slug)
 - Mejorar el tratamiento de imagenes con algun plugin jQuery. [CollagePlus](https://ed-lea.github.io/jquery-collagePlus/), [Chocolat](http://chocolat.insipi.de/),...
 - Publicacion automatica en Drupal
 

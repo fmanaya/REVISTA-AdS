@@ -1,30 +1,69 @@
 /*
 
-setea los ficheros iniciales de un numero de revista
+setea los ficheros iniciales de un numero de revista. 
+
+Previamenrte completar array indice
 
 node setupNum 172 12
- */
+node setupNum 173 10
+*/
 var fs = require('fs'),
     util = require('util');
 
 
+/* fin config */
+
 var indice = [];
 indice.push(new Articulo(
-	"titulo 1",
-	"autor"
+	"Saluda",
+	"Pilara Piedrafita Acín"
+));
+indice.push(new Articulo(
+	"Vida cotidiana en Sabiñánigo a través de los gastos del Concejo",
+	"José Ángel Gracia Pardo"
 ));
 
 indice.push(new Articulo(
-	"titulo 2",
-	"autor"
+	"O dolmen d’As Tallatas en Bentué de Nozito",
+	"Óscar Latas Alegre"
 ));
 
+indice.push(new Articulo(
+	"Don Ángel y el pueblo redimido (I)",
+	"Enrique Satué Oliván"
+));
 
+indice.push(new Articulo(
+	"Cajal frente a la pseudociencia: su vigencia",
+	"Carlos Eduardo de Jesús Sierra Cuartas"
+));
 
+indice.push(new Articulo(
+	"Intervención arqueológica en el castillo de Larrés (II)",
+	"José Luis Cebolla Berlanga y Francisco Javier Ruiz Ruiz"
+));
 
+indice.push(new Articulo(
+	"Noticias Amigos de Serrablo",
+	"Amigos de Serrablo"
+));
 
+indice.push(new Articulo(
+	"Noticias Museo de Dibujo Julio Gavín- Castillo de Larrés",
+	"Alfredo Gavín"
+));
 
+indice.push(new Articulo(
+	"Noticias Museo Ángel Orensanz y Artes de Serrablo",
+	"Begoña Subías Pérez"
+));
 
+indice.push(new Articulo(
+	"Serrablitos",
+	"Amigos de Serrablo"
+));
+
+/* fin config */
 
 function Articulo(t, a) {
         this.titulo = t;

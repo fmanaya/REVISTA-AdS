@@ -1,0 +1,26 @@
+---
+title: test subdir include
+subtitle: inclusion de los ficheros en un path
+autor: otro autor
+numrev: 999
+layout: "default"
+isPage: true
+numArticulo: 4
+---
+
+<%- @getUrl() %>
+
+Esta es la opcion buena para el tratsmiento de partes de un articulo, como los de noticias
+
+<% for file in @getFilesAtPath("./includes").findAll().toJSON(): %>
+<article class="news">
+    <header>
+<h2><%= file.title %></h2>
+    </header>
+    <section>
+<% if file.img: %><img src="<%= @getThumbnail(file.img, 'medium-phi') %>" alt="" title="" copyright=""/><% end %>
+<%- file.contentRenderedWithoutLayouts %>
+    </section>
+</article>
+<% end %>
+

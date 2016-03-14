@@ -3,12 +3,18 @@ body
 	border-right: dotted grey 1px;
 
 h1
-    color: red
+	color: red
+
+h2
+	font-size: 22px
+
+.active
+	background-color: rgb(115, 115, 249)
 
 #one
 	width: 972px
 	float: left
-	background: cyan
+	/*background: cyan*/
 	position: absolute
 
 #two
@@ -20,10 +26,17 @@ h1
 span.piepag
 	background-color: yellow
 	
-/*	
-h2	
-	font-variant: small-caps; 	
-*/
+h1, h2, h3, h4
+/*	font-variant: small-caps 	*/
+	text-transform: uppercase
+	font-family: sans-serif;
+
+/* inline quotation */
+q
+	font-style: italic
+
+.smallcaps
+	font-size: small
 
 /* In your CSS */
 .Collage
@@ -46,5 +59,24 @@ article
 			height: auto
 			background-color: #f9f9f9
 			img
+				/*float: left*/
+				padding: 0px 10px 0px 0px
+			figure
 				float: left
-				padding-right: 10px
+				width: 300px /* siempre, ver partial srblNoticia */
+				clear: both
+				text-align: center
+			figcaption
+				font-family: sans-serif
+				font-stretch: condensed
+				font-size: 14px
+				padding-top: 10px
+				word-wrap:normal
+				text-align: center
+
+.accordion-toggle 
+	cursor: pointer
+.accordion-content
+	display: none
+.accordion-content.default
+	display: block

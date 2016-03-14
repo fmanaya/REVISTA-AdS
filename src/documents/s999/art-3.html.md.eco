@@ -1,5 +1,6 @@
 ---
 title: test fotmato y otros
+subtitle: Compendio de marcado md
 autor: Nombre autor
 numrev: 999
 layout: "default"
@@ -9,9 +10,13 @@ numArticulo: 3
 
 <%- @getUrl() %>
 
+https://github.com/SublimeText-Markdown/MarkdownEditing
+
+
 ## Cabecera 2
 
-Lorem ipsum dolor sit amet, consectetur *adipiscing* elit. Aenean erat velit, dapibus a felis vel, dignissim porta metus. **Maecenas eu mauris** sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur semper nunc ligula, non semper justo pellentesque eget. Pellentesque leo dolor, fermentum ut mauris a, _pulvinar dignissim nulla_. Vivamus cursus ipsum facilisis, rutrum ex eget, egestas eros. Praesent dignissim urna vitae nisi pharetra, eget ultricies justo sodales. Suspendisse a convallis mi, ut tempor nulla.
+Lorem ipsum dolor sit amet, consectetur *adipiscing* elit.  
+Aenean erat velit, dapibus a felis vel, dignissim porta metus. **Maecenas eu mauris** sem.  Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur semper nunc ligula, non semper justo pellentesque eget. Pellentesque leo dolor, fermentum ut mauris a, _pulvinar dignissim nulla_. Vivamus cursus ipsum facilisis, rutrum ex eget, egestas eros. Praesent dignissim urna vitae nisi pharetra, eget ultricies justo sodales. Suspendisse a convallis mi, ut tempor nulla.
 
 - In hac habitasse platea dictumst.
 - Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
@@ -20,11 +25,36 @@ Lorem ipsum dolor sit amet, consectetur *adipiscing* elit. Aenean erat velit, da
            
 
 ### Cabecera 3
-In rhoncus, odio ac faucibus tempor, lorem mi lacinia nisl, vitae gravida mi arcu sit amet nibh. Maecenas accumsan dictum ex, sit amet volutpat ipsum porta non. Ut dignissim fringilla tortor, eu laoreet libero vulputate eu. Etiam efficitur gravida nulla ut vulputate. Etiam sodales odio eget facilisis ultricies. Etiam hendrerit, lectus in ornare pellentesque, sapien purus dapibus est, sit amet semper ligula ante ut ligula. Vestibulum euismod orci sed ex iaculis suscipit. Nulla venenatis semper nisi vel efficitur. Cras a urna euismod, dignissim neque ut, egestas nulla. Vivamus commodo eros nibh, sed tristique urna hendrerit ut. Maecenas at sem lacus. Mauris mattis purus a nunc tincidunt rutrum. Pellentesque consectetur tincidunt odio ac hendrerit. Aliquam dictum nisl at arcu cursus, quis gravida justo aliquam. Aenean auctor sodales eros. Vestibulum bibendum laoreet massa in cursus.
+In rhoncus, odio ac faucibus tempor, lorem mi lacinia nisl, vitae gravida mi arcu sit amet nibh. Maecenas accumsan dictum ex, sit amet volutpat ipsum porta non. Ut dignissim fringilla tortor, eu laoreet libero vulputate eu. Etiam efficitur gravida nulla ut vulputate. <q>Etiam sodales odio eget facilisis ultricies</q>. Etiam hendrerit, lectus in ornare pellentesque, sapien purus dapibus est, sit amet semper ligula ante ut ligula. Vestibulum euismod orci sed ex iaculis suscipit. Nulla venenatis semper nisi vel efficitur. 
 
-Fusce enim velit, viverra nec pulvinar sit amet, sollicitudin ac velit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas lacinia maximus ipsum, eu auctor nisl placerat eget. Nullam augue dolor, auctor congue velit quis, dictum dictum sem. Integer vel eleifend diam. Suspendisse et feugiat neque. Aenean in rhoncus ipsum. Sed vehicula tellus sit amet ex elementum convallis. Fusce sodales magna leo, sit amet laoreet magna ornare at. Integer molestie congue odio eget consequat. Mauris vehicula vulputate eros elementum dignissim. Pellentesque a purus in quam interdum ullamcorper et in odio. Sed sit amet sagittis mi, non malesuada sapien. Nulla ac tempor dui.
+    Cras a urna euismod, dignissim neque ut, egestas nulla. Vivamus commodo eros nibh, sed tristique urna hendrerit ut. Maecenas at sem lacus. Mauris mattis purus a nunc tincidunt rutrum. Pellentesque consectetur tincidunt odio ac hendrerit. Aliquam dictum nisl at arcu cursus, quis gravida justo aliquam. Aenean auctor sodales eros. Vestibulum bibendum laoreet massa in cursus.
+
+>Fusce enim velit, viverra nec pulvinar sit amet, sollicitudin ac velit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas lacinia maximus ipsum, eu auctor nisl placerat eget. Nullam augue dolor, auctor congue velit quis, dictum dictum sem. Integer vel eleifend diam. Suspendisse et feugiat neque. Aenean in rhoncus ipsum. Sed vehicula tellus sit amet ex elementum convallis. Fusce sodales magna leo, sit amet laoreet magna ornare at. Integer molestie congue odio eget consequat. Mauris vehicula vulputate eros elementum dignissim. Pellentesque a purus in quam interdum ullamcorper et in odio. Sed sit amet sagittis mi, non malesuada sapien. Nulla ac tempor dui.
 
 #### Cabecera 4
-Sed libero orci, finibus quis vestibulum at, blandit sed turpis. Nulla facilisi. Donec placerat, odio vitae condimentum efficitur, ex sem dapibus arcu, vitae tempus quam tortor sit amet ante. Quisque euismod, neque a varius porta, urna mauris egestas tortor, pharetra vulputate nunc purus ut enim. In congue, neque consectetur ullamcorper gravida, turpis ante fermentum libero, non aliquam nibh metus sit amet enim. In tincidunt congue orci vitae tincidunt. Aenean nec risus sollicitudin, luctus urna ut, imperdiet dolor. Quisque ultrices nisi sit amet erat luctus lacinia. Nunc commodo sit amet neque sed luctus. Vestibulum tincidunt quam est, non consequat velit congue sit amet. Nam ornare mi vel tortor vulputate, quis varius diam cursus. Vestibulum in mattis tortor, eu vestibulum elit. Nunc ut enim ut est sagittis finibus. Nulla non leo hendrerit, varius est nec, tincidunt tellus. Fusce faucibus mauris nisl, sit amet tempus nisl porttitor non.
+Sed LIBERO orci, finibus quis vestibulum at, blandit sed turpis. Nulla facilisi. Donec placerat, odio vitae condimentum efficitur, ex sem dapibus arcu, vitae tempus quam tortor sit amet ante. Quisque euismod, neque a varius porta, urna mauris egestas tortor, pharetra vulputate nunc purus ut enim. In congue, neque consectetur ullamcorper gravida, turpis ante fermentum LIBERO, non aliquam nibh metus sit amet enim. In tincidunt congue orci vitae tincidunt. Aenean nec risus sollicitudin, luctus urna ut, imperdiet dolor. Quisque ultrices nisi sit amet erat luctus lacinia. Nunc XIX commodo sit amet neque sed luctus. Vestibulum tincidunt quam est, non consequat velit congue sit amet. Nam ornare mi vel tortor vulputate, quis varius diam cursus. Vestibulum in mattis tortor, eu vestibulum elit. Nunc ut enim ut est sagittis finibus. Nulla non leo hendrerit, varius est nec, tincidunt tellus. Fusce faucibus mauris nisl, sit amet tempus nisl porttitor non.
 
-Phasellus volutpat dapibus quam tempus elementum. Curabitur sit amet massa tortor. Quisque nunc justo, scelerisque sed magna quis, placerat commodo turpis. Morbi porttitor malesuada nulla sit amet blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse egestas sem et finibus maximus. Fusce gravida justo tellus, eget sollicitudin est rutrum ac. Aliquam dapibus vel orci rhoncus porttitor.
+Phasellus volutpat dapibus quam tempus elementum. Curabitur sit amet massa tortor. Quisque nunc justo, scelerisque sed magna quis, placerat commodo turpis. Morbi porttitor malesuada nulla sit amet blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse egestas sem et finibus maximus. Fusce gravida justo tellus, eget sollicitudin est rutrum ac. Aliquam III dapibus vel orci rhoncus porttitor.
+
+- Museo de Dibujo Julio Gavín-Castillo de Larrés
+- Museo de Dibujo “Julio Gavín-Castillo de Larrés”
+- Museo de Dibujo "Julio Gavín-Castillo de Larrés"
+- Museo “Ángel Orensanz y Artes de Serrablo”
+- Museo Ángel Orensanz y Artes de Serrablo
+- Comarca Alto Gállego
+- Comarca de La Jacetania
+- Gobierno de Aragón
+- Ayuntamiento de Sabiñánigo
+- Instituto de Estudios Altoaragoneses
+- Obra Social de Ibercaja
+- Asociación Fotográfica de Sabiñánigo
+- Asociación O Zoque
+- Asociación Sancho Ramírez
+- Museo de Miniaturas militares de la Ciudadela
+- Museo de Miniaturas Militares de la Ciudadela
+- Museo Diocesano de Jaca'
+- Museo Diocesano de Arte Románico de Jaca
+- Museo Diocesano
+
+Test Museo de Dibujo Julio Gavín-Castillo de Larrés.
+
