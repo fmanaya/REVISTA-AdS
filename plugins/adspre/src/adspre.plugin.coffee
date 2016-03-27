@@ -27,7 +27,7 @@ module.exports = (BasePlugin) ->
 			tn = "img/srbl#{numeroRevista}/#{img.nombre}"
 			#muppet = "Beeker"
 			#return "My favorite muppet is #{muppet}!"
-			tag = "<img src=\"<%= @getThumbnail(\"#{tn}\", \"#{img.modo}\") %>\" alt=\"#{img.titulo}. #{img.cp}\" title=\"#{img.titulo}\" copyright=\"#{img.cp}\">"
+			tag = "<img id=\"#{img.nombre}\" src=\"<%= @getThumbnail(\"#{tn}\", \"#{img.modo}\") %>\" alt=\"#{img.titulo}. #{img.cp}\" title=\"#{img.titulo}\" copyright=\"#{img.cp}\">"
 			#console.log tag
 			return tag
 

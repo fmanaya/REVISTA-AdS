@@ -2,31 +2,6 @@
 # http://docpad.org/docs/config
 
 #ver https://github.com/maximilianschmitt/docpad-plugin-shortcodeparser
-#class Shortcode
-#	constructor: (@name, @replacer) ->
-
-#srblShortCodes = []
-#[vimeo id="21657846" width="100%" height="500" title="0" byline="0"]
-#srblShortCodes.push new Shortcode 'vimeo', (attributes, content) ->
-#	attributes.id ?= '21657846'
-#	attributes.title ?= true
-#	attributes.byline ?= true
-#	attributes.portrait ?= true
-#	attributes.color ?= '#FFFFFF'
-#
-#	"""
-#	<iframe src="http://player.vimeo.com/video/#{attributes.id}?title=#{attributes.title}&amp;byline=#{attributes.byline}&amp;portrait=#{attributes.portrait}&amp;color=#{attributes.color}" width="#{attributes.width}" height="#{attributes.height}" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-#	"""
-
-#[sc t="XXII"]
-#srblShortCodes.push new Shortcode 'sc', (attrs, content) ->
-#	attrs.t ?= ''
-#
-#	"""
-#	<span class="smallcaps">#{attrs.t}</span>
-#	"""
-
-
 srblSCodes = [ {
   tag: 'sc'
   cb: (buf, opts, templateData) ->

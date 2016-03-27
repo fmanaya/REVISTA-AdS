@@ -22,11 +22,13 @@ Con esta herramienta se postprocesa cada fichero html generado para tocar los at
 
 ## TODOs:
 - Meter el caption de las imagenes. (DONE)
-- Usar [slug](https://github.com/dodo/node-slug)
+- Identificar las imagenes del articulo para poder enlazarlas <a href="#img1"/>    <a id="img1"><img src=""></a>
+- Usar [slug](https://github.com/dodo/node-slug) 
 - Mejorar el tratamiento de imagenes con algun plugin jQuery. [CollagePlus](https://ed-lea.github.io/jquery-collagePlus/), [Chocolat](http://chocolat.insipi.de/),...
 - Publicacion automatica en Drupal
 
 ## Referencias:
+- http://docpad.org/
 - https://github.com/ervwalter/ewalnet-docpad, incluye plugin
 - http://www.delarre.net/posts/creating-a-docpad-plugin/
 

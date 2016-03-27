@@ -29,5 +29,7 @@
   "scripts": {
     "start": "node ./node_modules/docpad/bin/docpad-server"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "mkdirp": "^0.5.1"
+  }
 }
