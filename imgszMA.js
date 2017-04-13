@@ -39,6 +39,10 @@ function processImage(f, callback) {
 //var log = fs.createWriteStream('imgs.txt', {'flags': 'w'});
 var log = fs.openSync('imgs.txt', 'w');
 
+/*
+ * Busca imagenes en el filesystem tratadas con el plugin thumbnail
+ * Las renombra en el direcorio de salida
+ */
 var search = function(dirOrigen, dirDestino, dirHtml, cb) {
     if (!fs.existsSync(dirOrigen)) {
         return console.log('Directory ' + dirOrigen + ' does not exist.');
@@ -87,6 +91,9 @@ var search = function(dirOrigen, dirDestino, dirHtml, cb) {
 
 };
 
+/*
+ * Busca imagenes en los html de salida para ponerles height/width
+ */
 function dimensiones(el, index, array) {
     console.log("procesando imagen %d:[%s] ", index, el.name);
     processImage(el, function(f, err) {
@@ -111,8 +118,17 @@ function dimensiones(el, index, array) {
 		var htmlfile = DIRHTML + '/art-' + art + '.html';
 		var pathNew = f.name.split("/"); 
 
+        /*
+         imagen normal, generada en el plugin adspre
+         <img id="s173a2i1.jpg" src="/img\srbl173/s173a2i1.thumb_default_w371h371q96.jpg" alt="Finales de los años 40. Día del Árbol en Sabiñánigo.. " title="Finales de los años 40. Día del Árbol en Sabiñánigo." copyright="">
+
+         imagen en noticia generada en partial srblNoticias
+         <img news src="/img\srbl173/s173a9i2.thumb_default_w300h300q96.jpg" alt="" title="Demostración del trabajo en el telar" copyright=""/>
+         */
+        
 		var thumbDP =  "/img\\\\" + pathOld[2] + "/" + pathOld[4]; //srbl171/s171a9i1.thumb_default_w600h800q96.jpg" ;
 		var imgDP =  "src=\""  + thumbDP + "\"";
+        //TODO: Verificar si pongo class o no, 
 		var imgNew = util.format('src="/img/%s/%s" class="imagen izqu" width="%d" height="%d" ', pathOld[2], pathNew[4], f.w, f.h);
 		console.log('REPLACE,' +
 		    ' regex:' + imgDP +  
@@ -120,12 +136,13 @@ function dimensiones(el, index, array) {
 		    ' paths:' + htmlfile
 		);
 		replace({
-		    regex: imgDP,   		//src="/img\srbl171/s171a9i1.thumb_default_w600h800q96.jpg" 
+		    regex: imgDP,   		    //src="/img\srbl171/s171a9i1.thumb_default_w600h800q96.jpg" 
 		    replacement: imgNew,		//src="/img\srbl171/s171a9i1.jpg" class="" width="" height="" 
 		    paths: [htmlfile],           // 
 		    recursive: false,
 		    silent: false,
 		});
+
         return f;
     });
 }

@@ -1,258 +1,264 @@
-
-
-function Articulo(t, a, i, p) {
+function Articulo(t, s, a, i, p) {
     this.titulo = t;
+    this.subtitulo = s;
     this.autor = a;
     this.imagenes = i;
     this.partials = p;
 };
 
 
+/*
+//plantillas
 
-/* fin config 
-plantillas
+Articulos simple
 Articulo(
-"Saluda",
-"Pilara Piedrafita Acín",
-[{ t: 'Titulo', cp: '' }]
-))
+    "titulo",
+    "_subtitulo_",
+    "autor", 
+    [{
+        t: 'Titulo',
+        cp: ''
+    }]
+));
 
+Articulos de noticias, con apartados
 Articulo(
-"Noticias",
-"AdS",
-null,
-[
-    {
+    "Titulo",
+    "autor",
+    null, 
+    [{
         t: '',
-        img: [
-            { t: '', cp: '' }
-        ]
-    }
-]
-)
+        img: [{
+            t: '',
+            cp: ''
+        }]
+    }]
+);
 */
 
+
 var indice = [];
+
 indice.push(new Articulo(
-    "Saluda",
-    "Pilara Piedrafita Acín"
+    "Saluda", "",
+    "AdS"
 ));
+
+
 indice.push(new Articulo(
-    "La placa de los Caídos. Sabiñánigo, 1940-1980",
+    "Secorún.", "Capital histórica del valle de Serrablo",
     "Leonardo Puértolas Coli", [{
-        t: 'Iglesia de Cristo Rey original de 1929. Sabiñánigo 1955',
-        cp: ''
-    }, {
-            t: 'Diario de operaciones de la Falange de Sabiñánigo',
-            cp: ''
-        }, {
-            t: 'Escuela de D. José Latorre, 1955-56',
-            cp: ''
-        }, {
-            t: 'Carrera ciclista y local de Sindicatos, años 50',
-            cp: ''
-        }, {
-            t: 'Placa en viviendas del Grupo Bilbao (1954)',
-            cp: ''
-        }, {
-            t: 'Mostrador de la Fonda de la Estación',
-            cp: ''
-        }, {
-            t: 'Heraldo',
-            cp: ''
-        }, {
-            t: 'Cementerio republicano en el Molino Escartín',
-            cp: ''
-        }, {
-            t: 'Placa de los Caídos. Barbastro, iglesia de San Francisco',
-            cp: ''
-        }]
+        t: "Secorún ",
+        cp: ""
+    },{
+        t: "Secorún",
+        cp: ""
+    },{
+        t: "Secorún",
+        cp: ""
+    },{
+        t: "Secorún",
+        cp: ""
+    },{
+        t: "Secorún",
+        cp: ""
+    },{
+        t: "Secorún",
+        cp: ""
+    },{
+        t: "Secorún",
+        cp: ""
+    },{
+        t: "Secorún",
+        cp: ""
+    },{
+        t: "Secorún",
+        cp: ""
+    }]
 ));
 
 indice.push(new Articulo(
-    "Dos curiosos contratos en el Pirineo tradicional",
-    "José Ángel Gracia Pardo", [{
-        t: 'Casbas de Jaca. 1958',
-        cp: ''
-    }, {
-            t: 'Hasta principios del siglo xix el lobo merodeaba los poblados',
-            cp: ''
-        }]
+    "Inaugurado el Centro de Interpretación de las Iglesias de Serrablo en Lárrede", "",
+    "Comarca Alto Gállego", [{
+        t: "",
+        cp: ""
+    },{
+        t: "",
+        cp: ""
+    },{
+        t: "",
+        cp: ""
+    }]
+));
+
+indice.push(new Articulo(
+    "Cajal y el desastre colonial", "",
+    "Carlos Eduardo de Jesús Sierra Cuartas", [{
+        t: "Retrato de 1874 de Cajal como capitán médico en Cuba",
+        cp: ""
+    },{
+        t: "Soldados españoles en Pinar del Río, Cuba",
+        cp: ""
+    },{
+        t: "Caricatura del general Weyler",
+        cp: ""
+    },{
+        t: "Pascual Cervera y Topete",
+        cp: ""
+    },{
+        t: "Crucero acorazado español Reina Mercedes hundido por los españoles un día después de la batalla en la bahía de Santiago de Cuba",
+        cp: ""
+    },{
+        t: "Torre del crucero acorazado español Vizcaya destruida en la batalla de Santiago de Cuba.",
+        cp: ""
+    }]
+));
+indice.push(new Articulo(
+    "Especies coralinas descritas en el Bartoniense pirenaico suroccidental", "",
+    "Guillermo Gómez", [{
+        t: "Fig.1 Stylophora binacuaensis. Izqd. descripción original; centro. detalle de pólipos alineados; Dcha Stylophora actual.",
+        cp: ""
+    },{
+        t: "Fig 2. Stylocoenia sanctaorosiae: Izda. descripción original;dcha. ejemplar propio. Género exclusivamente fósil.",
+        cp: ""
+    },{
+        t: "Fig 3. Cyathoseris castroi: izda. descripción original; dcha. plano poliperal y base pedunculada. Género exclusivamente fósil.",
+        cp: ""
+    },{
+        t: "Fig 4. Leptoseris santaciliaensis: izda. descripción original; centro ejemplar fragmentado, detalle, y poliperos madre sobre pedúnculo; dcha. Leptoseris actual.",
+        cp: ""
+    },{
+        t: "Fig 5. Ellipsocoenia bauza. Izda. descripción original; centro. colonia joven pedunculada; dcha. Ellipsocoenia actual.",
+        cp: ""
+    },{
+        t: "Fig 6. Alveopora ataresensis. Izda. descripción original; centro. porcion de colonia, detalle políperos; dcha Alveopora actual.",
+        cp: ""
+    },{
+        t: "Fig 7. Millepora subpirenaica. Izda. descripción original; centro. ejemplar propio; dcha. Millepora actual.",
+        cp: ""
+    },{
+        t: "Fig 8. Izda. Montlivaultia Egozcuei con la descripción original y fotografía actual. Centro arriba Cycloseris sublenticularis (Mallada) izda. la ausencia de epiteca y el botón dorsal, dcha. el recuento de sus 96 septos.",
+        cp: ""
+    }]
+));
+
+indice.push(new Articulo(
+    "Memoria Amigos de Serrablo 2016", "",
+    "AdS", []
+));
+
+indice.push(new Articulo(
+    "Estado de cuentas de la Asociación Amigos de Serrablo 2016", "",
+    "AdS", []
 ));
 
 
 indice.push(new Articulo(
-    "Puentes romanos y medievales",
-    "Aurelio Viñas Escuer", [{
-        t: 'Puente de Anzánigo',
-        cp: 'SIPCA'
-    }, {
-            t: 'Puente de La Gorgocha, sumergido casi permanentemente',
-            cp: ''
-        }]
-));
-indice.push(new Articulo(
-    "Don Ángel y el pueblo redimido (II)",
-    "Enrique Satué Oliván", [{
-        t: 'Dique de cierre original construido hacia 1920.',
-        cp: 'Foto: Archivo cartagra'
-    }, {
-            t: 'Proyecto de la Sexta División Hidrográfico-Forestal para el nuevo núcleo de Escuer y el vivero, en el cono de deyección del barranco.',
-            cp: 'Foto: Archivo cartagra'
-        }, {
-            t: '',
-            cp: ''
-        }, {
-            t: 'Escuela de Escuer, hoy centro social',
-            cp: ''
-        }]
-));
-indice.push(new Articulo(
-    "Serrablo, la comarca de los prodigios",
-    "Michel Ortiz", [{
-        t: 'Cartel',
-        cp: ''
-    }, {
-            t: '',
-            cp: ''
-        }, {
-            t: '',
-            cp: ''
-        }, {
-            t: '',
-            cp: ''
-        }, {
-            t: '',
-            cp: ''
-        }]
-));
-indice.push(new Articulo(
-    "La restauración del molino de Ainielle",
-    "Enrique Satué Oliván", [{
-        t: 'Obras de restauración del molino de Ainielle. Noviembre de 2015',
-        cp: 'Fotografía: Carlos Tarazona'
-    }, {
-            t: 'Eduardo de la Cruz y Julio Llamazares en la realización del documental sobre la memoria amarilla. 16 de noviembre de 2012',
-            cp: ''
-        }, {
-            t: '',
-            cp: ''
-        }, {
-            t: 'Juego de molino, o alquerque, grabado en Ainielle en el suelo, en una vieja rueda',
-            cp: ''
-        }, {
-            t: '',
-            cp: ''
-        }, {
-            t: 'Interior del molino de Ainielle antes de la restauración',
-            cp: ''
-        }]));
-indice.push(new Articulo(
-    "Memoria Amigos de Serrablo 2015",
-    ""
-));
-indice.push(new Articulo(
-    "Estado de cuentas de la Asociación Amigos de Serrablo",
-    ""
-));
-indice.push(new Articulo(
-    "Noticias Amigos de Serrablo",
-    "", [], [{
-        t: 'NUEvA EDICIÓN DE DIvERSAbI',
-        img: []
-    }, {
-            t: 'CÓMIC SObRE LAS IGLESIAS DE SERRAbLO',
-            img: [{
-                t: 'Detalle del comic',
-                cp: ''
-            }]
-        }, {
-            t: 'CONSEJO DEL TURISMO DE ARAGÓN',
-            img: [{
-                t: 'Amigos de Serrablo en el Consejod de Turismo de Aragón',
-                cp: ''
-            }]
-        }, {
-            t: 'TRANSPARENCIA EN LA GESTIÓN',
-            img: []
-        }]
-));
-indice.push(new Articulo(
-    "Noticias Museo de Dibujo Julio Gavín- Castillo de Larrés",
-    "Alfredo Gavín", [], [{
-        t: 'EXPOSICIÓN DE DIbUJOS DE PACO LAFARGA',
+    "Noticias Amigos de Serrablo", "",
+    "AdS", 
+    null, 
+    [{
+        t: 'CUMPLEAÑOS EN DIVERSABI',
         img: [{
-            t: '',
+            t: 'Momento en Diversabi',
             cp: ''
         }]
     }, {
-            t: 'CÓMIC CLÁSICO EN LA SALA DE ARTE DE SAbIñÁNIGO',
-            img: []
-        }, {
-            t: 'CALENDARIO DE DESNUDOS POR EL 30 ANIvERSARIO DEL MUSEO',
-            img: []
-        }, {
-            t: 'vISITAS GUIADAS NOCTURNAS',
-            img: []
-        }, {
-            t: '“MUJER CON MANTILLA”, EN MADRID',
-            img: []
-        }
-
-    ]
-));
-indice.push(new Articulo(
-    "Noticias Museo Ángel Orensanz y Artes de Serrablo",
-    "Begoña Subías Pérez", [], [{
-        t: 'EDICIÓN NÚMERO XXv DE LAS bEILADAS',
+        t: 'GRACIAS, VALE LA PENA'
+    }, {
+        t: 'AMIGOS DE SERRABLO Y LOS CENTROS ESCOLARES'
+    }, {
+        t: 'CENTRO DE INTERPRETACIÓN DE LAS IGLESIAS DE SERRABLO EN LÁRREDE',
         img: [{
-            t: 'Imagen de la segunda beilada impartida por Daniel Gómez',
+            t: 'Lárrede',
             cp: ''
         }]
-    }, {
-            t: 'ORENSANZ DISTINGUIDO POR UNA ORDEN bRITÁNICA',
-            img: []
-        }, {
-            t: '“CLAMO-HOMENAJE A LA TRASHUMANCIA”, GANADORA DEL XvI PREMIO INTERNACIONAL DE ESCULTURA “ÁNGEL ORENSANZ”',
-            img: [{
-                t: '“Clamo-Homenaje a la trashumancia”',
-                cp: ''
-            }]
-        }, {
-            t: 'II CONCURSO ESCOLAR DE DIbUJO-INvESTIGACIÓN',
-            img: [{
-                t: 'Dibujo ganador 6.º de Primaria del Colegio Montecorona',
-                cp: ''
-            }]
-        }, {
-            t: 'HOGUERAS DE SAN SEbASTIÁN',
-            img: []
-        }, {
-            t: 'DESCUbIERTOS UNOS MURALES DE ORENSANZ PINTADOS HACE MÁS DE 20 AñOS',
-            img: []
-        }]
-));
-indice.push(new Articulo(
-    "Serrablitos",
-    "", [{
-        t: '',
-        cp: ''
-    }, {
-            t: '',
-            cp: ''
-        }, {
-            t: '',
-            cp: ''
-        }, {
-            t: '',
-            cp: ''
-        }, {
-            t: '',
-            cp: ''
-        }, {
-            t: '',
-            cp: ''
-        }]
+    }]
 ));
 
-module.exports = indice
+
+
+
+
+
+
+
+indice.push(new Articulo(
+    "Noticias Museo de Dibujo Julio Gavín-Castillo de Larrés", "",
+    "AdS", 
+    null, 
+    [{
+        t: 'CONVENIO MARCO CON LA UNIVERSIDAD DE BARCELONA'
+    }, {
+        t: 'RESIDENCIA ESTUDIANTE UNIVERSIDAD DE BARCELONA'
+    }, {
+        t: 'SOLICITUD DE PRÉSTAMO',
+        img: [{
+            t: '“Mausoleo de Joaquín Costa”',
+            cp: 'Félix Lafuente'
+        }]
+    }, {
+        t: 'DEPÓSITO CDAN',
+        img: [{
+            t: 'xxxx',
+            cp: ''
+        }]
+    }, {
+        t: 'FONDO MUSEO'
+    }, {
+        t: 'ESCULTURA PINOCHO',
+        img: [{
+            t: 'Escultura Pinocho',
+            cp: ''
+        }]
+    }, {
+        t: 'DOMUS'
+    }]
+));
+
+
+indice.push(new Articulo(
+    "Noticias Museo Ángel Orensanz y Artes de Serrablo", "",
+    "Begoña Subías Pérez",
+    null, 
+    [{
+        t: 'UN NUEVO MUSEO DE ORENSANZ'
+    }, {
+        t: 'EL BELÉN DEL MUSEO',
+        img: [{
+            t: 'La clase de 6.º de Primaria',
+            cp: ''
+        }]
+    }, {
+        t: 'EDICIÓN NÚMERO XXVI DE AS BEILADAS',
+        img: [{
+            t: 'Enrique junto a una de sus informantes: Miguela Sanromán, de Escuer.',
+            cp: 'Fotografía: Raúl González'
+        }]
+    }, {
+        t: 'EL AYER Y EL HOY DE LAS  HOGUERAS DE SAN SEBASTIÁN',
+        img: [{
+            t: 'Las hogueras de San Sebastián.',
+            cp: 'Fotografía: Javier Ara'
+        }]
+    }, {
+        t: 'LA CAJA DE MÚSICA, EL OTOÑO Y SUSÍN',
+        img: [{
+            t: 'Un momento de la presentación.',
+            cp: 'Fotografía: Andrés Muñoz'
+        }]
+    }, {
+        t: 'LA TIENDA CRECE',
+        img: [{
+            t: 'Los nuevos productos de la tienda',
+            cp: ''
+        }]
+    }]));
+
+
+
+
+console.log('AAAAAAAAAAAAAAAAAAAAARTS: ' + indice.length)
+
+
+exports.indice = indice;

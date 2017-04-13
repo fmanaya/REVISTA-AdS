@@ -10,7 +10,7 @@ node setupNum 173 10
 var fs = require('fs'),
     util = require('util'),
     mkdirp = require('mkdirp');
-    indice = require('./setupNumCfg');
+    cfg = require('./setupNumCfg.js');
 
 
 
@@ -19,7 +19,7 @@ function newArt(n, r, oA) {
     console.log('trato:' + oA.titulo);
     var dir = util.format('src/documents/s%d/', r),
         fname = util.format('art-%d.html.md.eco', n),
-        suffixSrbl = oA.imagenes ? '.srbl' : '',
+        suffixSrbl = oA.imagenes ? '.srbl' : '',              //verificar esto, o depende de tb de los tags propios [sc][/sc]
         fullfilename = dir + fname + suffixSrbl,
         stream = fs.createWriteStream(fullfilename, {
             flags: 'wx',
@@ -31,6 +31,7 @@ function newArt(n, r, oA) {
     stream.once('open', function(fd) {
         stream.write("---\n");
         stream.write(util.format('title: %s\n', oA.titulo)); //"title: \n");
+        stream.write(util.format('subtitle: %s\n', oA.subtitulo)); //"title: \n");
         stream.write(util.format('autor: %s\n', oA.autor)); //"autor: \n");
         stream.write(util.format('numrev: %d\n', r)); //"numrev: 172\n");
         stream.write("layout: \"default\"\n");
@@ -70,14 +71,14 @@ function newArt(n, r, oA) {
                     //img:
                     //- {path:"img/srbl173/s173a9i3.jpg", titulo:"Mural “Artes, Ciencias y Letras”  de Ángel Orensanz", cp:""}
                     if (p.img) {
-                        streamNoticia.write("img:\n");
+                        streamNoticia.write("imgs:\n");
                         p.img.forEach(function(img, i) {
                             var imgstr = util.format('- {path:"img/srbl%d/s%da%di%d.jpg", titulo:"%s", cp:"%s"}\n', r, r, n, i + 1, img.t, img.cp);
                             streamNoticia.write(imgstr);
                         });
                     }
                     streamNoticia.write("---\n\n");
-                    streamNoticia.write("<%- @getUrl() %>\n");
+                    //streamNoticia.write("<%- @getUrl() %>\n");
                     streamNoticia.end();
                 })
             })
@@ -88,18 +89,22 @@ function newArt(n, r, oA) {
 
 
 var numrevista = process.argv[2]; // 0 y 1 son node y el script js
-//var numarticulos = process.argv[3]; // TODO, esto obtenerlo del indice[]
+//var numarticulos = process.argv[3]; // TODO, esto obtenerlo del cfg[]
+var indexArt = cfg.indice;
 
-console.log(util.format('Voy a generar %s articulos', indice.length));
+console.log('REVISTA: ' + numrevista)
+console.log('ARTS: ' + indexArt.length)
+
+console.log(util.format('Voy a generar %d articulos', cfg.length));
 
 //for (var i = numarticulos - 1; i >= 0; i--) {
-//	newArt(i+1, numrevista, indice[i]);
+//	newArt(i+1, numrevista, cfg[i]);
 //};
 
 dir = util.format('src/documents/s%d/', numrevista);
 fs.existsSync(dir) || fs.mkdirSync(dir);
 
-indice.forEach(function(art, i) {
+indexArt.forEach(function(art, i) {
     console.log('%d, %d, art:%s', i + 1, numrevista, art.titulo);
     newArt(i + 1, numrevista, art);
 });

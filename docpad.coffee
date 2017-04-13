@@ -54,28 +54,31 @@ docpadConfig = {
 					'Museo de Dibujo "Julio Gavín-Castillo de Larrés"'	: '<a href="/museodibujo">Museo de Dibujo Julio Gavín-Castillo de Larrés</a>',
 					'Museo “Ángel Orensanz y Artes de Serrablo”'		: '<a href="/museoetnologico">Museo Ángel Orensanz y Artes de Serrablo</a>',
 					'Museo Ángel Orensanz y Artes de Serrablo'			: '<a href="/museoetnologico">Museo Ángel Orensanz y Artes de Serrablo</a>',
+					'Fundación “Ángel Orensanz”' 						: '<a href="http://www.orensanz.org">Fundación “Ángel Orensanz”</a>',
 					'Comarca Alto Gállego'								: '<a href="http://www.comarcaaltogallego.es">Comarca Alto Gállego</a>',
-					'Comarca de La Jacetania'							: '<a href="http://www.jacetania.es">Comarca de La Jacetania</a>',
+					'Comarca de la Jacetania'							: '<a href="http://www.jacetania.es">Comarca de la Jacetania</a>',
 					'Gobierno de Aragón'								: '<a href="http://www.aragon.es">Gobierno de Aragón</a>',
 					'Ayuntamiento de Sabiñánigo'						: '<a href="http://www.sabiñanigo.es">Ayuntamiento de Sabiñánigo</a>',
 					'Instituto de Estudios Altoaragoneses'				: '<a href="http://www.iea.es">Instituto de Estudios Altoaragoneses</a>',
 					'Obra Social de Ibercaja'							: '<a href="http://obrasocial.ibercaja.es">Obra Social de Ibercaja</a>',
 					'Asociación Fotográfica de Sabiñánigo' 				: '<a href="http://www.afsabi.com">Asociación Fotográfica de Sabiñánigo</a>',
+					'Asociación Cultural “O Zoque”'                     : '<a href="http://www.ozoque.com">Asociación Cultural “O Zoque”</a>',
 					'Asociación O Zoque' 								: '<a href="http://www.ozoque.com">Asociación O Zoque</a>',
+					'O Zoque' 								            : '<a href="http://www.ozoque.com">O Zoque</a>',
 					'Asociación Sancho Ramírez' 						: '<a href="http://www.asociacionsanchoramirez.com">Asociación Sancho Ramírez</a>',
 					'Museo de Miniaturas militares de la Ciudadela' 	: '<a href="http://www.museominiaturasjaca.es">Museo de Miniaturas militares de la Ciudadela</a>',
 					'Museo de Miniaturas Militares de la Ciudadela' 	: '<a href="http://www.museominiaturasjaca.es">Museo de Miniaturas militares de la Ciudadela</a>',
+					'Museo de Miniaturas Militares-Ciudadela de Jaca' 	: '<a href="http://www.museominiaturasjaca.es">Museo de Miniaturas militares de la Ciudadela</a>',					
 					'Museo Diocesano de Jaca' 							: '<a href="http://www.diocesisdejaca.org/index.php/museo-diocesano-de-jaca">Museo Diocesano de Jaca</a>',
 					'Museo Diocesano de Arte Románico de Jaca' 			: '<a href="http://www.diocesisdejaca.org/index.php/museo-diocesano-de-jaca">Museo Diocesano de Arte Románico de Jaca</a>',
 					'Museo Diocesano' 							        : '<a href="http://www.diocesisdejaca.org/index.php/museo-diocesano-de-jaca">Museo Diocesano</a>',
-
 
 					'Hardcore History'									: 'http://www.dancarlin.com/disp.php/hh'
 
 				texto = content
 				for key, value of srblTranslator
 	#				texto = texto.replace /#{key}/g, #{value}   #   "My favorite muppet is #{muppet}!"
-					re = new RegExp('[^>]'+key, "g");  # no al principio de la linea
+					re = new RegExp('[^>]'+key, "gm");  # no al principio de la linea
 					texto = texto.replace(re, ' '+value);
 					#docpad.log key
 				#opts.content = texto
@@ -188,7 +191,7 @@ docpadConfig = {
 			codes: srblSCodes
 	
 		thumbnails:
-			extensions: ['jpg', 'JPG', 'jpeg', 'JPEG', 'png', 'PNG', 'gif', 'GIF']
+			extensions: ['jpg', 'JPG', 'jpeg', 'JPEG', 'png', 'PNG', 'gif', 'GIF','tif', 'TIF']
 #			imageMagick: true		
 # 				default:		w: 150, h: 150, q: 85
 # 				tiny-square: 	w: 50, 	h: 50

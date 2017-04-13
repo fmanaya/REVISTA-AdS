@@ -10,7 +10,7 @@
         <%  modo = img.modo || 'w' %> 
         <% thumbPreset = 'medium-phi-' + modo %>
         <figure>
-            <img src="<%= @getThumbnail(img.path, {w:300, h:300}) %>" alt="" title="<%=img.titulo%>" copyright="<%=img.cp%>" class="imagen izqu"/>
+            <img src="<%= @getThumbnail(img.path, {w:300, h:300}) %>" alt="" title="<%=img.titulo%>" copyright="<%=img.cp%>"/> <!-- quita class tras imgsz -->
             <figcaption><%=img.titulo%> <%=img.cp%></figcaption>
         </figure>
     <% end %>

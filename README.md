@@ -26,6 +26,7 @@ Con esta herramienta se postprocesa cada fichero html generado para tocar los at
 - Usar [slug](https://github.com/dodo/node-slug) 
 - Mejorar el tratamiento de imagenes con algun plugin jQuery. [CollagePlus](https://ed-lea.github.io/jquery-collagePlus/), [Chocolat](http://chocolat.insipi.de/),...
 - Publicacion automatica en Drupal
+- Google fonts: Roboto Condensed para titulos https://www.google.com/fonts#UsePlace:use/Collection:Roboto+Condensed 
 
 ## Referencias:
 - http://docpad.org/
